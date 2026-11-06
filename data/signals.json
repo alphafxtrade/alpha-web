@@ -1,23 +1,23 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-06 09:16",
+  "updated_utc": "2026-11-06 09:34",
   "latest": {
-    "time": "2026-11-06 09:15",
-    "price": 4078.28,
+    "time": "2026-11-06 09:30",
+    "price": 4077.3,
     "session": "London",
-    "bias": "bullish",
+    "bias": "bearish",
     "confidence": 55,
-    "horizon": "intraday",
+    "horizon": "scalp",
     "market_state": "Trending",
     "avoid_trading": false,
-    "support": "4075.93 / 4061.35 / 4049.27",
-    "resistance": "4080.74 / 4107.03 / 4134.75",
-    "invalidation": "Close H1 di bawah 4075.93",
-    "invalidation_note": "Jika harga ditutup di bawah 4075.93 pada grafik 1 jam, analisa ini dianggap batal. Ini level pembatalan analisa, bukan saran stop loss. Jaraknya sekitar 2.4 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
+    "support": "4075.45 / 4068.11 / 4061.09",
+    "resistance": "4081.29 / 4085.93 / 4098.05",
+    "invalidation": "Close M15 di atas 4081.29",
+    "invalidation_note": "Jika harga ditutup di atas 4081.29 pada grafik 15 menit, analisa ini dianggap batal. Ini level pembatalan analisa, bukan saran stop loss. Jaraknya sekitar 4.0 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
     "blackout": null,
-    "summary": "AI menilai harga emas cenderung naik dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang bergerak searah (tren). Area yang diperhatikan: support (penahan harga) di 4075.93 / 4061.35 / 4049.27, resistance (penghambat harga) di 4080.74 / 4107.03 / 4134.75. Keyakinan model 55% (sedang). Ini penilaian model, bukan jaminan hasil.",
-    "reasoning": "H1 bullish (EMA stack bull, regime trend_up, close > EMA20/50). M5/M15 overbought (RSI 74/67, bb_pct >0.8, zscore >1.2) tapi pullback dangkal. H4/D1 mixed tapi H4 trend_up. Bias bullish intraday dengan invalidation close H1 < 4075.93. NFP risiko besar.",
-    "chart": "charts/p878.png"
+    "summary": "AI menilai harga emas cenderung turun dalam jangka pendek (sekitar 2 jam ke depan). Kondisi pasar: sedang bergerak searah (tren). Area yang diperhatikan: support (penahan harga) di 4075.45 / 4068.11 / 4061.09, resistance (penghambat harga) di 4081.29 / 4085.93 / 4098.05. Keyakinan model 55% (sedang). Ini penilaian model, bukan jaminan hasil.",
+    "reasoning": "M15 regime trend_down (ADX 37.3) dengan harga di upper BB (bb_pct 0.98) dan RSI 66.3 menunjukkan kelelahan naik. H1 bullish (ema_stack bull) tapi M5/M15 bearish untuk scalp. London high 4081.29 jadi resistance kunci. NFP 13:30 UTC risiko event risk besar.",
+    "chart": null
   },
   "stats": {
     "n": 41,
@@ -36,6 +36,22 @@
     "rules": "r3"
   },
   "history": [
+    {
+      "time": "2026-11-06 09:30",
+      "bias": "bearish",
+      "conf": 55,
+      "horizon": "scalp",
+      "result": "open",
+      "chart": null
+    },
+    {
+      "time": "2026-11-06 09:30",
+      "bias": "bullish",
+      "conf": 55,
+      "horizon": "scalp",
+      "result": "open",
+      "chart": null
+    },
     {
       "time": "2026-11-06 09:15",
       "bias": "bullish",
@@ -122,7 +138,7 @@
       "conf": 55,
       "horizon": "intraday",
       "result": "open",
-      "chart": "charts/p868.png"
+      "chart": null
     },
     {
       "time": "2026-11-06 07:00",
@@ -130,7 +146,7 @@
       "conf": 50,
       "horizon": "intraday",
       "result": "open",
-      "chart": "charts/p867.png"
+      "chart": null
     },
     {
       "time": "2026-11-06 06:45",
@@ -336,22 +352,6 @@
       "time": "2026-11-04 08:01",
       "bias": "bullish",
       "conf": 60,
-      "horizon": "intraday",
-      "result": "win",
-      "chart": null
-    },
-    {
-      "time": "2026-11-04 08:00",
-      "bias": "bullish",
-      "conf": 55,
-      "horizon": "scalp",
-      "result": "win",
-      "chart": null
-    },
-    {
-      "time": "2026-11-04 07:45",
-      "bias": "bullish",
-      "conf": 55,
       "horizon": "intraday",
       "result": "win",
       "chart": null
