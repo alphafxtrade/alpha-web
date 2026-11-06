@@ -33,11 +33,23 @@ nav a:hover{color:var(--accent)}
 .tt:hover{border-color:var(--accent)}
 .tt::before{content:"☾"}
 [data-theme="dark"] .tt::before{content:"☀"}
+.sechead{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
+.sechead h2{margin:0}
+.tz{display:flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.tz select{font:inherit;font-size:13px;letter-spacing:.02em;text-transform:none;color:var(--ink);background:var(--card);border:1px solid var(--line);padding:7px 12px;border-radius:0;cursor:pointer}
+.tz select:hover,.tz select:focus{border-color:var(--accent);outline:none}
 .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500}
 h1{font-size:clamp(32px,5vw,52px);line-height:1.1;font-weight:500;letter-spacing:-.02em;margin:14px 0 18px;max-width:14em}
 .lead{color:var(--mute);max-width:36em;font-size:17px}
 section{padding:72px 0;border-top:1px solid var(--line)}
-.hero{padding:88px 0 72px;border:0}
+.clocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));border:1px solid var(--line);background:var(--card);margin-bottom:56px}
+.clock{padding:22px 26px;border-right:1px solid var(--line)}
+.clock:last-child{border-right:0}
+.clock .city{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+.clock .city i{font-style:normal;color:var(--gold);margin-left:10px}
+.clock .t{font-size:34px;font-weight:500;letter-spacing:-.01em;font-variant-numeric:tabular-nums;margin-top:4px;line-height:1.2}
+.clock .d{font-size:13px;color:var(--soft);margin-top:2px}
+.hero{padding:88px 0 48px;border:0}
 h2{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute);font-weight:500;margin-bottom:28px}
 h2 b{display:inline-block;width:28px;height:2px;background:var(--accent);vertical-align:middle;margin-right:12px}
 .demo{display:none;margin-bottom:28px;padding:10px 16px;border:1px solid var(--gold);color:var(--gold);font-size:13px;letter-spacing:.04em}
@@ -88,7 +100,7 @@ td a:hover{text-decoration:underline}
 .disc{font-size:13px;color:var(--mute);max-width:52em}
 footer{border-top:1px solid var(--line);padding:40px 0;font-size:13px;color:var(--mute)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
-@media(max-width:640px){nav a{margin-left:14px;font-size:12px}.tt{margin-left:14px}.card{padding:22px}.hero{padding:56px 0 48px}section{padding:52px 0}}
+@media(max-width:640px){nav a{margin-left:14px;font-size:12px}.tt{margin-left:14px}.card{padding:22px}.hero{padding:56px 0 32px}.clock{border-right:0;border-bottom:1px solid var(--line)}.clock:last-child{border-bottom:0}section{padding:52px 0}}
 @media(max-width:480px){nav{display:none}}
 </style>
 </head>
@@ -108,10 +120,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <p class="lead">Setiap analisa dicatat, dinilai, dan ditampilkan apa adanya, termasuk yang meleset. Tanpa janji profit.</p>
   </div>
 
+  <div class="clocks" id="clocks" aria-label="Jam pasar"></div>
+
   <div class="demo" id="demo">DATA CONTOH: angka di bawah hanya ilustrasi tampilan, bukan hasil sungguhan.</div>
 
   <section id="analisa" style="border-top:0;padding-top:0">
-    <h2><b></b>Analisa terbaru</h2>
+    <div class="sechead"><h2><b></b>Analisa terbaru</h2><label class="tz">Zona waktu <select id="tz" aria-label="Pilih zona waktu"></select></label></div>
     <div class="card" id="latest"></div>
   </section>
 
@@ -124,7 +138,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <section id="riwayat">
     <h2><b></b>Riwayat analisa</h2>
     <div class="tw"><table>
-      <thead><tr><th>Waktu (UTC)</th><th>Bias</th><th>Keyakinan</th><th>Horizon</th><th>Hasil</th><th>Grafik</th></tr></thead>
+      <thead><tr><th id="thTime">Waktu (UTC)</th><th>Bias</th><th>Keyakinan</th><th>Horizon</th><th>Hasil</th><th>Grafik</th></tr></thead>
       <tbody id="hist"></tbody>
     </table></div>
     <p class="note">Riwayat menampilkan semua analisa. Statistik di atas hanya menghitung analisa yang waktunya tidak tumpang tindih. Grafik disimpan untuk analisa terbaru saja.</p>
@@ -167,6 +181,17 @@ history:[
 {time:"2026-11-05 10:15",bias:"bullish",conf:55,horizon:"scalp",result:"loss",chart:null},
 {time:"2026-11-04 08:45",bias:"neutral",conf:50,horizon:"intraday",result:"timeout",chart:null}]};
 
+var TZS=[["UTC","UTC"],["Asia/Jakarta","WIB · UTC+7"],["Asia/Makassar","WITA · UTC+8"],["Asia/Jayapura","WIT · UTC+9"],["Asia/Singapore","Singapura · UTC+8"],["Asia/Tokyo","Tokyo · UTC+9"],["Asia/Dubai","Dubai · UTC+4"],["Europe/London","London"],["America/New_York","New York"]];
+var TZ="UTC",LAST=null;
+try{var sv=localStorage.getItem("alpha-tz");if(sv&&TZS.some(function(z){return z[0]===sv}))TZ=sv}catch(e){}
+var DST={"Europe/London":"London","America/New_York":"New York"};
+function zlab(){return TZ==="UTC"?"UTC":(DST[TZ]||offsetOf(TZ,new Date()))}
+function conv(s){
+  if(!s)return s;var m=/^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})/.exec(s);if(!m)return s;
+  if(TZ==="UTC")return m[0];
+  try{var d=new Date(Date.UTC(+m[1],+m[2]-1,+m[3],+m[4],+m[5])),p={};
+    new Intl.DateTimeFormat("en-GB",{timeZone:TZ,year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(d).forEach(function(x){p[x.type]=x.value});
+    return p.year+"-"+p.month+"-"+p.day+" "+p.hour+":"+p.minute}catch(e){return m[0]}}
 function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e}
 function kv(k,v,c){var d=el("div");d.appendChild(el("div","k",k));d.appendChild(el("div","v"+(c?" "+c:""),v||"-"));return d}
 var BIAS={bullish:"Bullish",bearish:"Bearish",neutral:"Netral"};
@@ -174,6 +199,7 @@ var BIAS_SUB={bullish:"cenderung naik",bearish:"cenderung turun",neutral:"belum 
 var RES={win:"Menang",loss:"Kalah",open:"Berjalan",timeout:"Kedaluwarsa",na:"Tidak dinilai"};
 
 function render(d){
+  LAST=d;
   document.getElementById("demo").style.display=d.demo?"block":"none";
   var L=d.latest,box=document.getElementById("latest");box.textContent="";
   if(!L){box.appendChild(el("div","price","Belum ada analisa yang dipublikasikan."))}
@@ -188,12 +214,12 @@ function render(d){
     top.appendChild(p);box.appendChild(top);
     if(L.chart){
       var cb=el("div","chartbox"),im=el("img","chart");im.src=L.chart;im.alt="Grafik XAUUSD 15 menit saat analisa dibuat";im.loading="lazy";
-      cb.appendChild(im);cb.appendChild(el("div","cap","Grafik 15 menit (24 jam terakhir) saat analisa dibuat. Hijau tua: support. Emas: resistance. Merah: level batal (SL). Hijau muda: TP. Putih: entry."));
+      cb.appendChild(im);cb.appendChild(el("div","cap","Grafik 15 menit (24 jam terakhir) saat analisa dibuat. Hijau tua: support. Emas: resistance. Merah: level batal (SL). Hijau muda: TP. Putih: entry. Jam di dalam gambar selalu UTC."));
       box.appendChild(cb);
     }
     var g=el("div","grid");
     g.appendChild(kv("Support",L.support));g.appendChild(kv("Resistance",L.resistance));
-    g.appendChild(kv("Level batal (SL)",L.invalidation));g.appendChild(kv("Waktu (UTC)",L.time));
+    g.appendChild(kv("Level batal (SL)",L.invalidation));g.appendChild(kv("Waktu ("+zlab()+")",conv(L.time)));
     box.appendChild(g);
     if(L.plan){
       var P=L.plan,pb=el("div","plan");
@@ -205,7 +231,7 @@ function render(d){
         pg.appendChild(kv("Stop loss (SL)",String(P.sl),"sl"));
         pg.appendChild(kv("Take profit (TP)",String(P.tp),"tp"));
         pb.appendChild(pg);
-        pb.appendChild(el("div","fine","Jarak ke SL "+P.r_usd+" dolar ("+P.r_atr+"× ATR 1 jam), TP sejauh 1R. SL dianggap kena bila "+P.sl_basis+" melewati level itu, bukan sekadar tersentuh. TP dianggap tercapai bila harga menyentuh level itu lebih dulu. Berlaku sampai sekitar "+P.expires+" UTC, setelah itu dinilai kedaluwarsa."));
+        pb.appendChild(el("div","fine","Jarak ke SL "+P.r_usd+" dolar ("+P.r_atr+"× ATR 1 jam), TP sejauh 1R. SL dianggap kena bila "+P.sl_basis+" melewati level itu, bukan sekadar tersentuh. TP dianggap tercapai bila harga menyentuh level itu lebih dulu. Berlaku sampai sekitar "+conv(P.expires)+" "+zlab()+", setelah itu dinilai kedaluwarsa."));
         pb.appendChild(el("div","warn","Ini definisi yang dipakai untuk menilai rekam jejak di bawah, bukan rekomendasi. Belum termasuk spread, komisi, dan slippage. Jarak SL yang pendek membuat biaya tersebut berpengaruh besar."));
       }else{
         pb.appendChild(el("div","fine",P.reason||"Rencana tidak tersedia."));
@@ -229,16 +255,45 @@ function render(d){
     "Dihitung dari "+dn+" analisa berarah dengan aturan evaluasi yang tetap dan terbuka.";
   if(s.baseline)nt+=" Pembanding "+s.baseline.label+": "+s.baseline.acc+"% (n="+s.baseline.n+"). AI baru berarti bila jelas di atas pembanding.";
   document.getElementById("statnote").textContent=nt;
+  document.getElementById("thTime").textContent="Waktu ("+zlab()+")";
   var tb=document.getElementById("hist");tb.textContent="";
   if(!d.history.length){var er2=el("tr"),c2=el("td","","Belum ada data.");c2.colSpan=6;er2.appendChild(c2);tb.appendChild(er2)}
   d.history.forEach(function(h){
-    var tr=el("tr");tr.appendChild(el("td","",h.time));tr.appendChild(el("td","",BIAS[h.bias]||h.bias));
+    var tr=el("tr");tr.appendChild(el("td","",conv(h.time)));tr.appendChild(el("td","",BIAS[h.bias]||h.bias));
     tr.appendChild(el("td","",h.conf+"%"));tr.appendChild(el("td","",h.horizon));
     var td=el("td");td.appendChild(el("span","res "+h.result,RES[h.result]||h.result));tr.appendChild(td);
     var tg=el("td");if(h.chart){var a=el("a","","Lihat");a.href=h.chart;a.target="_blank";a.rel="noopener";tg.appendChild(a)}else{tg.textContent="-"}
     tr.appendChild(tg);tb.appendChild(tr)});
-  document.getElementById("upd").textContent="Diperbarui: "+d.updated_utc+" UTC"+(d.demo?" (contoh)":"");
+  document.getElementById("upd").textContent="Diperbarui: "+conv(d.updated_utc)+" "+zlab()+(d.demo?" (contoh)":"");
 }
+var ZONES=[["Jakarta","WIB","Asia/Jakarta"],["London","","Europe/London"],["New York","","America/New_York"]];
+var CK=[];
+function offsetOf(tz,now){try{var p=new Intl.DateTimeFormat("en-US",{timeZone:tz,timeZoneName:"shortOffset"}).formatToParts(now).filter(function(x){return x.type==="timeZoneName"})[0].value;
+  p=p.replace("GMT","UTC");return p==="UTC"?"UTC+0":p}catch(e){return ""}}
+function buildClocks(){
+  var box=document.getElementById("clocks");
+  ZONES.forEach(function(z){
+    var c=el("div","clock"),city=el("div","city",z[0]),tag=el("i");city.appendChild(tag);
+    var t=el("div","t","--:--:--"),d=el("div","d","");
+    c.appendChild(city);c.appendChild(t);c.appendChild(d);box.appendChild(c);
+    CK.push({tz:z[2],lab:z[1],tag:tag,t:t,d:d,
+      tf:new Intl.DateTimeFormat("en-GB",{timeZone:z[2],hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"}),
+      df:new Intl.DateTimeFormat("id-ID",{timeZone:z[2],weekday:"long",day:"numeric",month:"long",year:"numeric"})});
+  });
+}
+function tick(){
+  var now=new Date();
+  CK.forEach(function(c){
+    c.t.textContent=c.tf.format(now);c.d.textContent=c.df.format(now);
+    var o=offsetOf(c.tz,now);c.tag.textContent=(c.lab?c.lab+" · ":"")+o;
+  });
+}
+function loop(){tick();setTimeout(loop,1000-(Date.now()%1000)+5)}
+buildClocks();loop();
+(function(){var s=document.getElementById("tz");
+  TZS.forEach(function(z){var o=document.createElement("option");o.value=z[0];o.textContent=z[1];if(z[0]===TZ)o.selected=true;s.appendChild(o)});
+  s.addEventListener("change",function(){TZ=s.value;try{localStorage.setItem("alpha-tz",TZ)}catch(e){}if(LAST)render(LAST)});
+})();
 document.getElementById("tt").addEventListener("click",function(){
   var n=document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark";
   document.documentElement.setAttribute("data-theme",n);try{localStorage.setItem("alpha-theme",n)}catch(e){}
