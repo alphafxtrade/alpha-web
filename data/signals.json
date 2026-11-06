@@ -1,20 +1,23 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-06 09:07",
+  "updated_utc": "2026-11-06 09:16",
   "latest": {
-    "time": "2026-11-06 09:00",
-    "price": 4075.7,
+    "time": "2026-11-06 09:15",
+    "price": 4078.28,
     "session": "London",
     "bias": "bullish",
-    "confidence": 60,
+    "confidence": 55,
     "horizon": "intraday",
     "market_state": "Trending",
     "avoid_trading": false,
-    "support": "4072.83 / 4063.57 / 4049.27",
-    "resistance": "4076.19 / 4107.03 / 4134.75",
-    "invalidation": "Close M5 di bawah 4072.83",
+    "support": "4075.93 / 4061.35 / 4049.27",
+    "resistance": "4080.74 / 4107.03 / 4134.75",
+    "invalidation": "Close H1 di bawah 4075.93",
+    "invalidation_note": "Jika harga ditutup di bawah 4075.93 pada grafik 1 jam, analisa ini dianggap batal. Ini level pembatalan analisa, bukan saran stop loss. Jaraknya sekitar 2.4 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
     "blackout": null,
-    "reasoning": "H1 bullish stack (EMA20>EMA50>EMA200) dan H4 trend_up mendukung bias bullish intraday. M5 di atas EMA200 (4072.83) tapi overbought. M15 trend_down konflik, confidence dikurangi. Support kunci EMA200 M5 & EMA20 H1. Resistance London high 4076.19. NFP tier1 13:30 UTC risiko volatilitas besar."
+    "summary": "AI menilai harga emas cenderung naik dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang bergerak searah (tren). Area yang diperhatikan: support (penahan harga) di 4075.93 / 4061.35 / 4049.27, resistance (penghambat harga) di 4080.74 / 4107.03 / 4134.75. Keyakinan model 55% (sedang). Ini penilaian model, bukan jaminan hasil.",
+    "reasoning": "H1 bullish (EMA stack bull, regime trend_up, close > EMA20/50). M5/M15 overbought (RSI 74/67, bb_pct >0.8, zscore >1.2) tapi pullback dangkal. H4/D1 mixed tapi H4 trend_up. Bias bullish intraday dengan invalidation close H1 < 4075.93. NFP risiko besar.",
+    "chart": "charts/p878.png"
   },
   "stats": {
     "n": 41,
@@ -34,284 +37,324 @@
   },
   "history": [
     {
+      "time": "2026-11-06 09:15",
+      "bias": "bullish",
+      "conf": 55,
+      "horizon": "intraday",
+      "result": "open",
+      "chart": "charts/p878.png"
+    },
+    {
       "time": "2026-11-06 09:00",
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": "charts/p877.png"
     },
     {
       "time": "2026-11-06 08:45",
       "bias": "bearish",
       "conf": 50,
       "horizon": "scalp",
-      "result": "open"
+      "result": "open",
+      "chart": "charts/p876.png"
     },
     {
       "time": "2026-11-06 08:38",
       "bias": "bullish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": "charts/p875.png"
     },
     {
       "time": "2026-11-06 08:30",
       "bias": "bearish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": "charts/p874.png"
     },
     {
       "time": "2026-11-06 08:15",
       "bias": "bearish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": "charts/p873.png"
     },
     {
       "time": "2026-11-06 08:00",
       "bias": "bearish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": "charts/p872.png"
     },
     {
       "time": "2026-11-06 07:45",
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": "charts/p871.png"
     },
     {
       "time": "2026-11-06 07:30",
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": "charts/p870.png"
     },
     {
       "time": "2026-11-06 07:25",
       "bias": "bearish",
       "conf": 52,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": "charts/p869.png"
     },
     {
       "time": "2026-11-06 07:15",
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": "charts/p868.png"
     },
     {
       "time": "2026-11-06 07:00",
       "bias": "bearish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": "charts/p867.png"
     },
     {
       "time": "2026-11-06 06:45",
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": null
     },
     {
       "time": "2026-11-06 06:30",
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": null
     },
     {
       "time": "2026-11-06 06:23",
       "bias": "bearish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": null
     },
     {
       "time": "2026-11-06 03:45",
       "bias": "bearish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "timeout"
+      "result": "timeout",
+      "chart": null
     },
     {
       "time": "2026-11-06 03:30",
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": null
     },
     {
       "time": "2026-11-06 03:15",
       "bias": "bearish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "win"
+      "result": "win",
+      "chart": null
     },
     {
       "time": "2026-11-06 03:11",
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": null
     },
     {
       "time": "2026-11-06 03:00",
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": null
     },
     {
       "time": "2026-11-06 02:45",
       "bias": "bearish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "win"
+      "result": "win",
+      "chart": null
     },
     {
       "time": "2026-11-06 02:30",
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open"
+      "result": "open",
+      "chart": null
     },
     {
       "time": "2026-11-06 02:15",
       "bias": "bearish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "win"
+      "result": "win",
+      "chart": null
     },
     {
       "time": "2026-11-06 02:03",
       "bias": "bearish",
       "conf": 45,
       "horizon": "scalp",
-      "result": "timeout"
+      "result": "timeout",
+      "chart": null
     },
     {
       "time": "2026-11-04 11:00",
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "na"
+      "result": "na",
+      "chart": null
     },
     {
       "time": "2026-11-04 10:45",
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "win"
+      "result": "win",
+      "chart": null
     },
     {
       "time": "2026-11-04 10:30",
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "na"
+      "result": "na",
+      "chart": null
     },
     {
       "time": "2026-11-04 10:15",
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "loss"
+      "result": "loss",
+      "chart": null
     },
     {
       "time": "2026-11-04 10:00",
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "win"
+      "result": "win",
+      "chart": null
     },
     {
       "time": "2026-11-04 09:45",
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "win"
+      "result": "win",
+      "chart": null
     },
     {
       "time": "2026-11-04 09:30",
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "loss"
+      "result": "loss",
+      "chart": null
     },
     {
       "time": "2026-11-04 09:15",
       "bias": "bullish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "timeout"
+      "result": "timeout",
+      "chart": null
     },
     {
       "time": "2026-11-04 09:00",
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "win"
+      "result": "win",
+      "chart": null
     },
     {
       "time": "2026-11-04 08:45",
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "win"
+      "result": "win",
+      "chart": null
     },
     {
       "time": "2026-11-04 08:30",
       "bias": "bullish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "win"
+      "result": "win",
+      "chart": null
     },
     {
       "time": "2026-11-04 08:15",
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "win"
+      "result": "win",
+      "chart": null
     },
     {
       "time": "2026-11-04 08:05",
       "bias": "bullish",
       "conf": 50,
       "horizon": "scalp",
-      "result": "na"
+      "result": "na",
+      "chart": null
     },
     {
       "time": "2026-11-04 08:01",
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "win"
+      "result": "win",
+      "chart": null
     },
     {
       "time": "2026-11-04 08:00",
       "bias": "bullish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "win"
+      "result": "win",
+      "chart": null
     },
     {
       "time": "2026-11-04 07:45",
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "win"
-    },
-    {
-      "time": "2026-11-04 07:30",
-      "bias": "bullish",
-      "conf": 55,
-      "horizon": "intraday",
-      "result": "win"
+      "result": "win",
+      "chart": null
     }
   ]
 }
