@@ -1,22 +1,22 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-06 10:19",
+  "updated_utc": "2026-11-06 10:34",
   "latest": {
-    "time": "2026-11-06 10:15",
-    "price": 4068.38,
+    "time": "2026-11-06 10:30",
+    "price": 4067.61,
     "session": "London",
     "bias": "bearish",
-    "confidence": 50,
+    "confidence": 55,
     "horizon": "intraday",
     "market_state": "Transisi",
     "avoid_trading": false,
     "support": "4049.27 / 4035.64 / 4012.57",
-    "resistance": "4081.29 / 4098.05 / 4107.03",
+    "resistance": "4070 / 4081.29 / 4098.05",
     "invalidation": "Close M15 di atas 4081.29",
-    "invalidation_note": "Jika harga ditutup di atas 4081.29 pada grafik 15 menit, analisa ini dianggap batal. Ini level pembatalan analisa, bukan saran stop loss. Jaraknya sekitar 12.9 dolar dari harga saat analisa.",
+    "invalidation_note": "Jika harga ditutup di atas 4081.29 pada grafik 15 menit, analisa ini dianggap batal. Ini level pembatalan analisa, bukan saran stop loss. Jaraknya sekitar 13.7 dolar dari harga saat analisa.",
     "blackout": null,
-    "summary": "AI menilai harga emas cenderung turun dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang berganti arah (transisi). Area yang diperhatikan: support (penahan harga) di 4049.27 / 4035.64 / 4012.57, resistance (penghambat harga) di 4081.29 / 4098.05 / 4107.03. Keyakinan model 50% (sedang). Ini penilaian model, bukan jaminan hasil.",
-    "reasoning": "M15 trend_down (ADX 33.7) mendominasi timing intraday. H1 bullish (ema_stack bull) tapi price di bawah EMA20. D1 bearish (ema_stack bear). Bias bearish intraday dengan confidence rendah karena konflik HTF. Support kunci S1 pivot 4049.27. Invalidation close_above high London 4081.29 di M15. NFP tier1 dalam 3.25 jam - risiko event besar.",
+    "summary": "AI menilai harga emas cenderung turun dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang berganti arah (transisi). Area yang diperhatikan: support (penahan harga) di 4049.27 / 4035.64 / 4012.57, resistance (penghambat harga) di 4070 / 4081.29 / 4098.05. Keyakinan model 55% (sedang). Ini penilaian model, bukan jaminan hasil.",
+    "reasoning": "M15 trend_down ADX 31.6 di bawah EMA20/50, H1 bullish tapi D1 bearish stack. Bias bearish intraday mengikuti M15/D1. Support kunci S1 pivot 4049.27. Invalidation close_above London high 4081.29 M15. NFP 13:30 UTC risiko utama.",
     "chart": null
   },
   "stats": {
@@ -36,6 +36,14 @@
     "rules": "r3"
   },
   "history": [
+    {
+      "time": "2026-11-06 10:30",
+      "bias": "bearish",
+      "conf": 55,
+      "horizon": "intraday",
+      "result": "open",
+      "chart": null
+    },
     {
       "time": "2026-11-06 10:15",
       "bias": "bearish",
@@ -342,14 +350,6 @@
     },
     {
       "time": "2026-11-04 09:00",
-      "bias": "bullish",
-      "conf": 60,
-      "horizon": "intraday",
-      "result": "win",
-      "chart": null
-    },
-    {
-      "time": "2026-11-04 08:45",
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
