@@ -1,26 +1,22 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-06 09:39",
+  "updated_utc": "2026-11-06 09:49",
   "latest": {
-    "time": "2026-11-06 09:30",
-    "price": 4077.3,
+    "time": "2026-11-06 09:46",
+    "price": 4076.51,
     "session": "London",
     "bias": "bearish",
-    "confidence": 55,
-    "horizon": "scalp",
-    "market_state": "Trending",
+    "confidence": 50,
+    "horizon": "intraday",
+    "market_state": "Transisi",
     "avoid_trading": false,
-    "support": "4075.45 / 4068.11 / 4061.09",
-    "resistance": "4081.29 / 4085.93 / 4098.05",
-    "invalidation": "Close M15 di atas 4081.29",
-    "invalidation_note": "Jika harga ditutup di atas 4081.29 pada grafik 15 menit, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 4.0 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
+    "support": "4041.6 / 4035.64 / 4049.27",
+    "resistance": "4081.29 / 4098.05 / 4107.03",
+    "invalidation": "Close H1 di atas 4081.29",
+    "invalidation_note": "Jika harga ditutup di atas 4081.29 pada grafik 1 jam, analisa ini dianggap batal. Ini level pembatalan analisa, bukan saran stop loss. Jaraknya sekitar 4.8 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
     "blackout": null,
-    "plan": {
-      "status": "invalid",
-      "reason": "Level batal terlalu dekat dengan harga (kurang dari 0,2 ATR 1 jam). Tidak dihitung dalam statistik."
-    },
-    "summary": "AI menilai harga emas cenderung turun dalam jangka pendek (sekitar 2 jam ke depan). Kondisi pasar: sedang bergerak searah (tren). Area yang diperhatikan: support (penahan harga) di 4075.45 / 4068.11 / 4061.09, resistance (penghambat harga) di 4081.29 / 4085.93 / 4098.05. Keyakinan model 55% (sedang). Ini penilaian model, bukan jaminan hasil.",
-    "reasoning": "M15 regime trend_down (ADX 37.3) dengan harga di upper BB (bb_pct 0.98) dan RSI 66.3 menunjukkan kelelahan naik. H1 bullish (ema_stack bull) tapi M5/M15 bearish untuk scalp. London high 4081.29 jadi resistance kunci. NFP 13:30 UTC risiko event risk besar.",
+    "summary": "AI menilai harga emas cenderung turun dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang berganti arah (transisi). Area yang diperhatikan: support (penahan harga) di 4041.6 / 4035.64 / 4049.27, resistance (penghambat harga) di 4081.29 / 4098.05 / 4107.03. Keyakinan model 50% (sedang). Ini penilaian model, bukan jaminan hasil.",
+    "reasoning": "Harga menembus London-NY low 4076.22 (trigger) namun bid saat ini 4076.43 sedikit di atasnya. D1 trend_down dengan ema_stack bear, H4 trend_up tapi EMA200 4112.29 sebagai resistensi besar, H1 trend_up ema_stack bull namun M15 trend_down overbought. London session aktif dengan range 4041.6-4081.29. Bias bearish intraday didasarkan pada D1 bearish, M15 overbought, dan breakout palsu potensial London-NY low. Invalidation di London high 4081.29 close H1. Confidence 50 karena konflik timeframe. Hindari trading saat NFP tier1 dalam ~3.7 jam.",
     "chart": null
   },
   "stats": {
@@ -40,6 +36,22 @@
     "rules": "r3"
   },
   "history": [
+    {
+      "time": "2026-11-06 09:46",
+      "bias": "bearish",
+      "conf": 50,
+      "horizon": "intraday",
+      "result": "open",
+      "chart": null
+    },
+    {
+      "time": "2026-11-06 09:45",
+      "bias": "bullish",
+      "conf": 60,
+      "horizon": "intraday",
+      "result": "open",
+      "chart": null
+    },
     {
       "time": "2026-11-06 09:30",
       "bias": "bearish",
@@ -340,22 +352,6 @@
       "time": "2026-11-04 08:15",
       "bias": "bullish",
       "conf": 55,
-      "horizon": "intraday",
-      "result": "win",
-      "chart": null
-    },
-    {
-      "time": "2026-11-04 08:05",
-      "bias": "bullish",
-      "conf": 50,
-      "horizon": "scalp",
-      "result": "na",
-      "chart": null
-    },
-    {
-      "time": "2026-11-04 08:01",
-      "bias": "bullish",
-      "conf": 60,
       "horizon": "intraday",
       "result": "win",
       "chart": null
