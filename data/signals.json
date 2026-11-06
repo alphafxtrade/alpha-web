@@ -1,22 +1,22 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-06 10:34",
+  "updated_utc": "2026-11-06 10:49",
   "latest": {
-    "time": "2026-11-06 10:30",
-    "price": 4067.61,
+    "time": "2026-11-06 10:45",
+    "price": 4067.95,
     "session": "London",
     "bias": "bearish",
     "confidence": 55,
     "horizon": "intraday",
     "market_state": "Transisi",
     "avoid_trading": false,
-    "support": "4049.27 / 4035.64 / 4012.57",
-    "resistance": "4070 / 4081.29 / 4098.05",
+    "support": "4041.6 / 4035.64 / 4012.57",
+    "resistance": "4081.29 / 4098.05 / 4107.03",
     "invalidation": "Close M15 di atas 4081.29",
-    "invalidation_note": "Jika harga ditutup di atas 4081.29 pada grafik 15 menit, analisa ini dianggap batal. Ini level pembatalan analisa, bukan saran stop loss. Jaraknya sekitar 13.7 dolar dari harga saat analisa.",
+    "invalidation_note": "Jika harga ditutup di atas 4081.29 pada grafik 15 menit, analisa ini dianggap batal. Ini level pembatalan analisa, bukan saran stop loss. Jaraknya sekitar 13.3 dolar dari harga saat analisa.",
     "blackout": null,
-    "summary": "AI menilai harga emas cenderung turun dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang berganti arah (transisi). Area yang diperhatikan: support (penahan harga) di 4049.27 / 4035.64 / 4012.57, resistance (penghambat harga) di 4070 / 4081.29 / 4098.05. Keyakinan model 55% (sedang). Ini penilaian model, bukan jaminan hasil.",
-    "reasoning": "M15 trend_down ADX 31.6 di bawah EMA20/50, H1 bullish tapi D1 bearish stack. Bias bearish intraday mengikuti M15/D1. Support kunci S1 pivot 4049.27. Invalidation close_above London high 4081.29 M15. NFP 13:30 UTC risiko utama.",
+    "summary": "AI menilai harga emas cenderung turun dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang berganti arah (transisi). Area yang diperhatikan: support (penahan harga) di 4041.6 / 4035.64 / 4012.57, resistance (penghambat harga) di 4081.29 / 4098.05 / 4107.03. Keyakinan model 55% (sedang). Ini penilaian model, bukan jaminan hasil.",
+    "reasoning": "M15 trend_down dengan ADX 29.6 mendukung bias bearish intraday. H1 bullish (ema_stack bull) tapi M5 transition mixed. Harga di bawah EMA20 M5 (4069.76) dan M15 (4064.19). Support kritis: London low 4041.6, today low 4035.64. Resistance: London high 4081.29, Pivot P 4098.05. NFP 13:30 UTC risiko besar. DXY up 0.517% 24h korelasi negatif emas.",
     "chart": null
   },
   "stats": {
@@ -36,6 +36,14 @@
     "rules": "r3"
   },
   "history": [
+    {
+      "time": "2026-11-06 10:45",
+      "bias": "bearish",
+      "conf": 55,
+      "horizon": "intraday",
+      "result": "open",
+      "chart": null
+    },
     {
       "time": "2026-11-06 10:30",
       "bias": "bearish",
@@ -346,14 +354,6 @@
       "conf": 55,
       "horizon": "scalp",
       "result": "timeout",
-      "chart": null
-    },
-    {
-      "time": "2026-11-04 09:00",
-      "bias": "bullish",
-      "conf": 60,
-      "horizon": "intraday",
-      "result": "win",
       "chart": null
     }
   ]
