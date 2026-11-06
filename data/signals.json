@@ -1,22 +1,22 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-06 09:49",
+  "updated_utc": "2026-11-06 10:04",
   "latest": {
-    "time": "2026-11-06 09:46",
-    "price": 4076.51,
+    "time": "2026-11-06 10:00",
+    "price": 4072.74,
     "session": "London",
-    "bias": "bearish",
-    "confidence": 50,
+    "bias": "bullish",
+    "confidence": 55,
     "horizon": "intraday",
-    "market_state": "Transisi",
+    "market_state": "Trending",
     "avoid_trading": false,
-    "support": "4041.6 / 4035.64 / 4049.27",
-    "resistance": "4081.29 / 4098.05 / 4107.03",
-    "invalidation": "Close H1 di atas 4081.29",
-    "invalidation_note": "Jika harga ditutup di atas 4081.29 pada grafik 1 jam, analisa ini dianggap batal. Ini level pembatalan analisa, bukan saran stop loss. Jaraknya sekitar 4.8 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
+    "support": "4071.52 / 4062.69 / 4049.27",
+    "resistance": "4081.29 / 4107.03 / 4134.75",
+    "invalidation": "Close M15 di bawah 4062.69",
+    "invalidation_note": "Jika harga ditutup di bawah 4062.69 pada grafik 15 menit, analisa ini dianggap batal. Ini level pembatalan analisa, bukan saran stop loss. Jaraknya sekitar 10.0 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
     "blackout": null,
-    "summary": "AI menilai harga emas cenderung turun dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang berganti arah (transisi). Area yang diperhatikan: support (penahan harga) di 4041.6 / 4035.64 / 4049.27, resistance (penghambat harga) di 4081.29 / 4098.05 / 4107.03. Keyakinan model 50% (sedang). Ini penilaian model, bukan jaminan hasil.",
-    "reasoning": "Harga menembus London-NY low 4076.22 (trigger) namun bid saat ini 4076.43 sedikit di atasnya. D1 trend_down dengan ema_stack bear, H4 trend_up tapi EMA200 4112.29 sebagai resistensi besar, H1 trend_up ema_stack bull namun M15 trend_down overbought. London session aktif dengan range 4041.6-4081.29. Bias bearish intraday didasarkan pada D1 bearish, M15 overbought, dan breakout palsu potensial London-NY low. Invalidation di London high 4081.29 close H1. Confidence 50 karena konflik timeframe. Hindari trading saat NFP tier1 dalam ~3.7 jam.",
+    "summary": "AI menilai harga emas cenderung naik dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang bergerak searah (tren). Area yang diperhatikan: support (penahan harga) di 4071.52 / 4062.69 / 4049.27, resistance (penghambat harga) di 4081.29 / 4107.03 / 4134.75. Keyakinan model 55% (sedang). Ini penilaian model, bukan jaminan hasil.",
+    "reasoning": "H1 ema_stack bull, regime trend_up, harga di atas EMA20/50. H4 trend_up. M15 regime trend_down tapi harga di atas EMA20. M5 trend_up. Bias bullish intraday mengikuti H1/H4. Invalidation: close M15 di bawah EMA20 4062.69. NFP 13:30 UTC risiko besar.",
     "chart": null
   },
   "stats": {
@@ -36,6 +36,14 @@
     "rules": "r3"
   },
   "history": [
+    {
+      "time": "2026-11-06 10:00",
+      "bias": "bullish",
+      "conf": 55,
+      "horizon": "intraday",
+      "result": "open",
+      "chart": null
+    },
     {
       "time": "2026-11-06 09:46",
       "bias": "bearish",
@@ -345,14 +353,6 @@
       "bias": "bullish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "win",
-      "chart": null
-    },
-    {
-      "time": "2026-11-04 08:15",
-      "bias": "bullish",
-      "conf": 55,
-      "horizon": "intraday",
       "result": "win",
       "chart": null
     }
