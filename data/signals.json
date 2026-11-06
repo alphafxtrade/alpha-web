@@ -1,20 +1,20 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-06 08:52",
+  "updated_utc": "2026-11-06 09:07",
   "latest": {
-    "time": "2026-11-06 08:45",
-    "price": 4071.51,
+    "time": "2026-11-06 09:00",
+    "price": 4075.7,
     "session": "London",
-    "bias": "bearish",
-    "confidence": 50,
-    "horizon": "scalp",
-    "market_state": "Transisi",
+    "bias": "bullish",
+    "confidence": 60,
+    "horizon": "intraday",
+    "market_state": "Trending",
     "avoid_trading": false,
-    "support": "4049.27 / 4035.64 / 4012.57",
-    "resistance": "4072.79 / 4098.05 / 4107.03",
-    "invalidation": "Close M15 di atas 4072.79",
+    "support": "4072.83 / 4063.57 / 4049.27",
+    "resistance": "4076.19 / 4107.03 / 4134.75",
+    "invalidation": "Close M5 di bawah 4072.83",
     "blackout": null,
-    "reasoning": "M15 trend_down (ADX 38.1) dengan harga di atas BB upper (zscore 2.95) menunjukkan ekstensi bearish. H1 bullish (ema_stack bull) tapi close 4055.78 < EMA20 4075.4. M5 transition, RSI 71.4 overbought. Bias bearish scalp mengikuti M15, invalidasi close_above 4072.79 (high London). NFP tier1 dalam ~4.7 jam - risiko event besar."
+    "reasoning": "H1 bullish stack (EMA20>EMA50>EMA200) dan H4 trend_up mendukung bias bullish intraday. M5 di atas EMA200 (4072.83) tapi overbought. M15 trend_down konflik, confidence dikurangi. Support kunci EMA200 M5 & EMA20 H1. Resistance London high 4076.19. NFP tier1 13:30 UTC risiko volatilitas besar."
   },
   "stats": {
     "n": 41,
@@ -33,6 +33,13 @@
     "rules": "r3"
   },
   "history": [
+    {
+      "time": "2026-11-06 09:00",
+      "bias": "bullish",
+      "conf": 60,
+      "horizon": "intraday",
+      "result": "open"
+    },
     {
       "time": "2026-11-06 08:45",
       "bias": "bearish",
@@ -304,13 +311,6 @@
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "win"
-    },
-    {
-      "time": "2026-11-04 07:15",
-      "bias": "bullish",
-      "conf": 55,
-      "horizon": "scalp",
       "result": "win"
     }
   ]
