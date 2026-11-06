@@ -61,6 +61,11 @@ h2 b{display:inline-block;width:28px;height:2px;background:var(--accent);vertica
 details{margin-top:16px;color:var(--mute);font-size:14px}
 summary{cursor:pointer;letter-spacing:.04em}
 details p{margin-top:8px;color:var(--soft)}
+.plan{margin-top:8px;padding:22px 24px;border:1px solid var(--line);background:var(--bg)}
+.plan .grid{padding:16px 0 4px}
+.v.sl{color:var(--accent)}.v.tp{color:var(--win)}
+.plan .fine{font-size:13px;color:var(--mute);margin-top:10px}
+.plan .warn{font-size:12px;color:var(--gold);margin-top:10px}
 .badge{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--accent);color:var(--accent);padding:3px 10px;margin-left:10px;vertical-align:middle}
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
 .stat{background:var(--card);padding:28px}
@@ -135,7 +140,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <div class="gloss">
       <div><b>Bias</b><p>Arah yang dinilai paling mungkin: bullish (naik), bearish (turun), atau netral (belum jelas).</p></div>
       <div><b>Support dan resistance</b><p>Support adalah area tempat harga sering tertahan saat turun. Resistance adalah area tempat harga sering tertahan saat naik.</p></div>
-      <div><b>Level batal</b><p>Batas yang, jika dilewati, membuat analisa dianggap salah. Ini bukan saran stop loss.</p></div>
+      <div><b>Level batal</b><p>Batas yang, jika dilewati, membuat analisa dianggap salah. Dalam simulasi evaluasi, level ini berperan sebagai SL.</p></div>
+      <div><b>Entry, SL, TP</b><p>Entry adalah harga saat analisa dibuat. SL adalah level batal. TP berjarak sama dengan SL ke arah analisa (1R). Semuanya simulasi untuk menilai rekam jejak.</p></div>
       <div><b>Horizon</b><p>Rentang waktu analisa berlaku: scalp sekitar 2 jam, intraday sekitar 8 jam, swing sekitar 2 hari.</p></div>
       <div><b>R</b><p>Satuan hasil. Menang +1R berarti untung sebesar jarak ke level batal, kalah mendekati -1R.</p></div>
     </div>
@@ -151,7 +157,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 <script>
 var SAMPLE={demo:true,updated_utc:"2026-11-06 09:00",
 latest:{time:"2026-11-06 09:00",price:4128.40,session:"London",bias:"bearish",confidence:62,horizon:"intraday",market_state:"Trending",avoid_trading:false,support:"4115 / 4098",resistance:"4136 / 4150",invalidation:"Close 1 jam di atas 4151",
-invalidation_note:"Jika harga ditutup di atas 4151 pada grafik 1 jam, analisa ini dianggap batal. Ini level pembatalan analisa, bukan saran stop loss.",blackout:null,chart:null,
+invalidation_note:"Jika harga ditutup di atas 4151 pada grafik 1 jam, analisa ini dianggap batal. Ini level pembatalan analisa, bukan saran stop loss.",blackout:null,chart:null,plan:{status:"valid",side:"SELL",entry:4128.4,sl:4151,tp:4105.8,r_usd:22.6,r_atr:1.9,sl_basis:"penutupan candle 1 jam",expires:"2026-11-06 17:00"},
 summary:"AI menilai harga emas cenderung turun dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang bergerak searah (tren). Keyakinan model 62% (sedang). Ini penilaian model, bukan jaminan hasil.",
 reasoning:"Contoh teks detail teknis."},
 stats:{n:18,dir_n:13,dir_acc:69.2,dir_lo:42,dir_hi:87,exp_r:0.57,wins:12,losses:2,baseline:{label:"EMA D1",acc:69.2,n:13}},
@@ -162,7 +168,7 @@ history:[
 {time:"2026-11-04 08:45",bias:"neutral",conf:50,horizon:"intraday",result:"timeout",chart:null}]};
 
 function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e}
-function kv(k,v){var d=el("div");d.appendChild(el("div","k",k));d.appendChild(el("div","v",v||"-"));return d}
+function kv(k,v,c){var d=el("div");d.appendChild(el("div","k",k));d.appendChild(el("div","v"+(c?" "+c:""),v||"-"));return d}
 var BIAS={bullish:"Bullish",bearish:"Bearish",neutral:"Netral"};
 var BIAS_SUB={bullish:"cenderung naik",bearish:"cenderung turun",neutral:"belum jelas"};
 var RES={win:"Menang",loss:"Kalah",open:"Berjalan",timeout:"Kedaluwarsa",na:"Tidak dinilai"};
@@ -182,13 +188,30 @@ function render(d){
     top.appendChild(p);box.appendChild(top);
     if(L.chart){
       var cb=el("div","chartbox"),im=el("img","chart");im.src=L.chart;im.alt="Grafik XAUUSD 15 menit saat analisa dibuat";im.loading="lazy";
-      cb.appendChild(im);cb.appendChild(el("div","cap","Grafik 15 menit (24 jam terakhir) saat analisa dibuat. Garis hijau: support. Emas: resistance. Merah: level batal. Putih: harga saat analisa."));
+      cb.appendChild(im);cb.appendChild(el("div","cap","Grafik 15 menit (24 jam terakhir) saat analisa dibuat. Hijau tua: support. Emas: resistance. Merah: level batal (SL). Hijau muda: TP. Putih: entry."));
       box.appendChild(cb);
     }
     var g=el("div","grid");
     g.appendChild(kv("Support",L.support));g.appendChild(kv("Resistance",L.resistance));
-    g.appendChild(kv("Level batal",L.invalidation));g.appendChild(kv("Waktu (UTC)",L.time));
+    g.appendChild(kv("Level batal (SL)",L.invalidation));g.appendChild(kv("Waktu (UTC)",L.time));
     box.appendChild(g);
+    if(L.plan){
+      var P=L.plan,pb=el("div","plan");
+      pb.appendChild(el("div","k","Rencana trade · simulasi evaluasi"));
+      if(P.status==="valid"){
+        var pg=el("div","grid");
+        pg.appendChild(kv("Arah",P.side==="BUY"?"Beli (BUY)":"Jual (SELL)"));
+        pg.appendChild(kv("Entry",String(P.entry)));
+        pg.appendChild(kv("Stop loss (SL)",String(P.sl),"sl"));
+        pg.appendChild(kv("Take profit (TP)",String(P.tp),"tp"));
+        pb.appendChild(pg);
+        pb.appendChild(el("div","fine","Jarak ke SL "+P.r_usd+" dolar ("+P.r_atr+"× ATR 1 jam), TP sejauh 1R. SL dianggap kena bila "+P.sl_basis+" melewati level itu, bukan sekadar tersentuh. TP dianggap tercapai bila harga menyentuh level itu lebih dulu. Berlaku sampai sekitar "+P.expires+" UTC, setelah itu dinilai kedaluwarsa."));
+        pb.appendChild(el("div","warn","Ini definisi yang dipakai untuk menilai rekam jejak di bawah, bukan rekomendasi. Belum termasuk spread, komisi, dan slippage. Jarak SL yang pendek membuat biaya tersebut berpengaruh besar."));
+      }else{
+        pb.appendChild(el("div","fine",P.reason||"Rencana tidak tersedia."));
+      }
+      box.appendChild(pb);
+    }
     if(L.blackout)box.appendChild(el("div","why","Blackout berita: "+L.blackout));
     box.appendChild(el("div","why",L.summary||L.reasoning));
     if(L.invalidation_note)box.appendChild(el("div","why small",L.invalidation_note));
