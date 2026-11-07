@@ -1,23 +1,34 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-06 10:49",
+  "updated_utc": "2026-11-07 03:42",
   "latest": {
-    "time": "2026-11-06 10:45",
-    "price": 4067.95,
+    "time": "2026-11-06 11:00",
+    "price": 4064.63,
     "session": "London",
     "bias": "bearish",
     "confidence": 55,
     "horizon": "intraday",
     "market_state": "Transisi",
     "avoid_trading": false,
-    "support": "4041.6 / 4035.64 / 4012.57",
-    "resistance": "4081.29 / 4098.05 / 4107.03",
-    "invalidation": "Close M15 di atas 4081.29",
-    "invalidation_note": "Jika harga ditutup di atas 4081.29 pada grafik 15 menit, analisa ini dianggap batal. Ini level pembatalan analisa, bukan saran stop loss. Jaraknya sekitar 13.3 dolar dari harga saat analisa.",
+    "support": "4049.27 / 4035.64 / 4012.57",
+    "resistance": "4068.33 / 4074.18 / 4081.29",
+    "invalidation": "Close H1 di atas 4074.18",
+    "invalidation_note": "Jika harga ditutup di atas 4074.18 pada grafik 1 jam, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 9.5 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
     "blackout": null,
-    "summary": "AI menilai harga emas cenderung turun dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang berganti arah (transisi). Area yang diperhatikan: support (penahan harga) di 4041.6 / 4035.64 / 4012.57, resistance (penghambat harga) di 4081.29 / 4098.05 / 4107.03. Keyakinan model 55% (sedang). Ini penilaian model, bukan jaminan hasil.",
-    "reasoning": "M15 trend_down dengan ADX 29.6 mendukung bias bearish intraday. H1 bullish (ema_stack bull) tapi M5 transition mixed. Harga di bawah EMA20 M5 (4069.76) dan M15 (4064.19). Support kritis: London low 4041.6, today low 4035.64. Resistance: London high 4081.29, Pivot P 4098.05. NFP 13:30 UTC risiko besar. DXY up 0.517% 24h korelasi negatif emas.",
-    "chart": null
+    "plan": {
+      "status": "valid",
+      "side": "SELL",
+      "entry": 4064.63,
+      "sl": 4074.18,
+      "tp": 4055.08,
+      "r_usd": 9.55,
+      "r_atr": 0.49,
+      "sl_basis": "penutupan candle 1 jam",
+      "expires": "2026-11-06 19:00"
+    },
+    "summary": "AI menilai harga emas cenderung turun dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang berganti arah (transisi). Area yang diperhatikan: support (penahan harga) di 4049.27 / 4035.64 / 4012.57, resistance (penghambat harga) di 4068.33 / 4074.18 / 4081.29. Keyakinan model 55% (sedang). Ini penilaian model, bukan jaminan hasil.",
+    "reasoning": "M15 trend_down (ADX 27.7) mendominasi timing intraday. H1 bullish (EMA stack bull) tapi price di bawah EMA20 (4074.18). D1 bearish. NFP 13:30 UTC risiko besar. Bias bearish intraday dengan invalidation H1 close > 4074.18.",
+    "chart": "charts/p887_v2.png"
   },
   "stats": {
     "n": 41,
@@ -37,12 +48,20 @@
   },
   "history": [
     {
+      "time": "2026-11-06 11:00",
+      "bias": "bearish",
+      "conf": 55,
+      "horizon": "intraday",
+      "result": "open",
+      "chart": "charts/p887_v2.png"
+    },
+    {
       "time": "2026-11-06 10:45",
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
       "result": "open",
-      "chart": null
+      "chart": "charts/p886_v2.png"
     },
     {
       "time": "2026-11-06 10:30",
@@ -50,7 +69,7 @@
       "conf": 55,
       "horizon": "intraday",
       "result": "open",
-      "chart": null
+      "chart": "charts/p885_v2.png"
     },
     {
       "time": "2026-11-06 10:15",
@@ -58,7 +77,7 @@
       "conf": 50,
       "horizon": "intraday",
       "result": "open",
-      "chart": null
+      "chart": "charts/p884_v2.png"
     },
     {
       "time": "2026-11-06 10:00",
@@ -66,7 +85,7 @@
       "conf": 55,
       "horizon": "intraday",
       "result": "open",
-      "chart": null
+      "chart": "charts/p883_v2.png"
     },
     {
       "time": "2026-11-06 09:46",
@@ -74,7 +93,7 @@
       "conf": 50,
       "horizon": "intraday",
       "result": "open",
-      "chart": null
+      "chart": "charts/p882_v2.png"
     },
     {
       "time": "2026-11-06 09:45",
@@ -82,7 +101,7 @@
       "conf": 60,
       "horizon": "intraday",
       "result": "open",
-      "chart": null
+      "chart": "charts/p881_v2.png"
     },
     {
       "time": "2026-11-06 09:30",
@@ -90,7 +109,7 @@
       "conf": 55,
       "horizon": "scalp",
       "result": "open",
-      "chart": null
+      "chart": "charts/p880_v2.png"
     },
     {
       "time": "2026-11-06 09:30",
@@ -98,7 +117,7 @@
       "conf": 55,
       "horizon": "scalp",
       "result": "open",
-      "chart": null
+      "chart": "charts/p879_v2.png"
     },
     {
       "time": "2026-11-06 09:15",
@@ -106,7 +125,7 @@
       "conf": 55,
       "horizon": "intraday",
       "result": "open",
-      "chart": null
+      "chart": "charts/p878_v2.png"
     },
     {
       "time": "2026-11-06 09:00",
@@ -114,7 +133,7 @@
       "conf": 60,
       "horizon": "intraday",
       "result": "open",
-      "chart": null
+      "chart": "charts/p877_v2.png"
     },
     {
       "time": "2026-11-06 08:45",
@@ -122,7 +141,7 @@
       "conf": 50,
       "horizon": "scalp",
       "result": "open",
-      "chart": null
+      "chart": "charts/p876_v2.png"
     },
     {
       "time": "2026-11-06 08:38",
@@ -346,14 +365,6 @@
       "conf": 55,
       "horizon": "intraday",
       "result": "loss",
-      "chart": null
-    },
-    {
-      "time": "2026-11-04 09:15",
-      "bias": "bullish",
-      "conf": 55,
-      "horizon": "scalp",
-      "result": "timeout",
       "chart": null
     }
   ]
