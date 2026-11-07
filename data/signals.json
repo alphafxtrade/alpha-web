@@ -1,6 +1,6 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-07 03:42",
+  "updated_utc": "2026-11-07 04:02",
   "latest": {
     "time": "2026-11-06 11:00",
     "price": 4064.63,
@@ -31,18 +31,18 @@
     "chart": "charts/p887_v2.png"
   },
   "stats": {
-    "n": 41,
-    "dir_n": 30,
-    "dir_acc": 63.3,
-    "dir_lo": 46.0,
-    "dir_hi": 78.0,
-    "exp_r": 0.13,
+    "n": 43,
+    "dir_n": 32,
+    "dir_acc": 62.5,
+    "dir_lo": 45.0,
+    "dir_hi": 77.0,
+    "exp_r": 0.08,
     "wins": 20,
-    "losses": 8,
+    "losses": 9,
     "baseline": {
       "label": "EMA D1",
-      "acc": 53.3,
-      "n": 30
+      "acc": 53.1,
+      "n": 32
     },
     "rules": "r3"
   },
@@ -52,7 +52,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": "charts/p887_v2.png"
     },
     {
@@ -60,7 +60,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": "charts/p886_v2.png"
     },
     {
@@ -68,7 +68,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": "charts/p885_v2.png"
     },
     {
@@ -76,7 +76,7 @@
       "bias": "bearish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": "charts/p884_v2.png"
     },
     {
@@ -84,7 +84,7 @@
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "loss",
       "chart": "charts/p883_v2.png"
     },
     {
@@ -92,7 +92,7 @@
       "bias": "bearish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": "charts/p882_v2.png"
     },
     {
@@ -100,7 +100,7 @@
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": "charts/p881_v2.png"
     },
     {
@@ -108,7 +108,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "open",
+      "result": "na",
       "chart": "charts/p880_v2.png"
     },
     {
@@ -116,7 +116,7 @@
       "bias": "bullish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "open",
+      "result": "na",
       "chart": "charts/p879_v2.png"
     },
     {
@@ -124,7 +124,7 @@
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": "charts/p878_v2.png"
     },
     {
@@ -132,7 +132,7 @@
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": "charts/p877_v2.png"
     },
     {
@@ -140,7 +140,7 @@
       "bias": "bearish",
       "conf": 50,
       "horizon": "scalp",
-      "result": "open",
+      "result": "na",
       "chart": "charts/p876_v2.png"
     },
     {
@@ -148,7 +148,7 @@
       "bias": "bullish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open",
+      "result": "loss",
       "chart": null
     },
     {
@@ -156,7 +156,7 @@
       "bias": "bearish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open",
+      "result": "loss",
       "chart": null
     },
     {
@@ -164,7 +164,7 @@
       "bias": "bearish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": null
     },
     {
@@ -172,7 +172,7 @@
       "bias": "bearish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": null
     },
     {
@@ -180,7 +180,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "loss",
       "chart": null
     },
     {
@@ -188,7 +188,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "loss",
       "chart": null
     },
     {
@@ -196,7 +196,7 @@
       "bias": "bearish",
       "conf": 52,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": null
     },
     {
@@ -204,7 +204,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": null
     },
     {
@@ -212,7 +212,7 @@
       "bias": "bearish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": null
     },
     {
@@ -220,7 +220,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": null
     },
     {
@@ -228,7 +228,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "loss",
       "chart": null
     },
     {
@@ -236,7 +236,7 @@
       "bias": "bearish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": null
     },
     {
@@ -252,7 +252,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "loss",
       "chart": null
     },
     {
@@ -268,7 +268,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": null
     },
     {
@@ -276,7 +276,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": null
     },
     {
@@ -292,7 +292,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": null
     },
     {
