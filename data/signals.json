@@ -1,34 +1,34 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-09 08:12",
+  "updated_utc": "2026-11-09 08:27",
   "latest": {
-    "time": "2026-11-09 08:00",
-    "price": 4088.05,
+    "time": "2026-11-09 08:15",
+    "price": 4091.74,
     "session": "London",
-    "bias": "bullish",
-    "confidence": 50,
+    "bias": "bearish",
+    "confidence": 55,
     "horizon": "scalp",
-    "market_state": "Transisi",
+    "market_state": "Trending",
     "avoid_trading": false,
-    "support": "4084.33 / 4072.76 / 4067.92",
-    "resistance": "4110.9 / 4114.49 / 4134.23",
-    "invalidation": "Close M15 di bawah 4084.33",
-    "invalidation_note": "Jika harga ditutup di bawah 4084.33 pada grafik 15 menit, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 3.7 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
+    "support": "4084.33 / 4073.48 / 4067.92",
+    "resistance": "4098.59 / 4106.55 / 4110.9",
+    "invalidation": "Close M5 di atas 4098.59",
+    "invalidation_note": "Jika harga ditutup di atas 4098.59 pada grafik 5 menit, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 6.9 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
     "blackout": null,
     "plan": {
       "status": "valid",
-      "side": "BUY",
-      "entry": 4088.05,
-      "sl": 4084.33,
-      "tp": 4091.78,
-      "r_usd": 3.72,
-      "r_atr": 0.2,
-      "sl_basis": "penutupan candle 15 menit",
-      "expires": "2026-11-09 10:00"
+      "side": "SELL",
+      "entry": 4091.74,
+      "sl": 4098.59,
+      "tp": 4084.88,
+      "r_usd": 6.86,
+      "r_atr": 0.37,
+      "sl_basis": "penutupan candle 5 menit",
+      "expires": "2026-11-09 10:15"
     },
-    "summary": "AI menilai harga emas cenderung naik dalam jangka pendek (sekitar 2 jam ke depan). Kondisi pasar: sedang berganti arah (transisi). Area yang diperhatikan: support (penahan harga) di 4084.33 / 4072.76 / 4067.92, resistance (penghambat harga) di 4110.9 / 4114.49 / 4134.23. Keyakinan model 50% (sedang). Ini penilaian model, bukan jaminan hasil.",
-    "reasoning": "M5 oversold ekstrem (RSI 19.4, BB lower) namun trend_down. M15 bullish stack, H1 transition bullish. Bias bullish scalp dengan konfidensi rendah karena konflik TF. Invalidation di low London 4084.33 M15 close. Target 4110.9.",
-    "chart": "charts/p911_v2.png"
+    "summary": "AI menilai harga emas cenderung turun dalam jangka pendek (sekitar 2 jam ke depan). Kondisi pasar: sedang bergerak searah (tren). Area yang diperhatikan: support (penahan harga) di 4084.33 / 4073.48 / 4067.92, resistance (penghambat harga) di 4098.59 / 4106.55 / 4110.9. Keyakinan model 55% (sedang). Ini penilaian model, bukan jaminan hasil.",
+    "reasoning": "M5 trend_down kuat (ADX 43.7, EMA stack mixed bearish, RSI 32.6). M15 trend_up tapi price di lower BB (bb_pct 0.05, zscore -1.79) menunjukkan overshoot bearish. H1 transition, H4 trend_up. Bias scalp bearish mengikuti M5 momentum, invalidation di EMA20 M5. Confidence 55% karena konflik H1/H4 bullish.",
+    "chart": "charts/p912_v2.png"
   },
   "stats": {
     "n": 44,
@@ -47,6 +47,14 @@
     "rules": "r3"
   },
   "history": [
+    {
+      "time": "2026-11-09 08:15",
+      "bias": "bearish",
+      "conf": 55,
+      "horizon": "scalp",
+      "result": "open",
+      "chart": "charts/p912_v2.png"
+    },
     {
       "time": "2026-11-09 08:00",
       "bias": "bullish",
@@ -141,7 +149,7 @@
       "conf": 65,
       "horizon": "intraday",
       "result": "open",
-      "chart": "charts/p900_v2.png"
+      "chart": null
     },
     {
       "time": "2026-11-09 05:00",
@@ -353,14 +361,6 @@
     },
     {
       "time": "2026-11-06 08:15",
-      "bias": "bearish",
-      "conf": 50,
-      "horizon": "intraday",
-      "result": "na",
-      "chart": null
-    },
-    {
-      "time": "2026-11-06 08:00",
       "bias": "bearish",
       "conf": 50,
       "horizon": "intraday",
