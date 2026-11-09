@@ -1,34 +1,27 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-09 06:42",
+  "updated_utc": "2026-11-09 06:57",
   "latest": {
-    "time": "2026-11-09 06:30",
-    "price": 4113.9,
+    "time": "2026-11-09 06:45",
+    "price": 4111.81,
     "session": "Asia",
-    "bias": "bearish",
-    "confidence": 55,
-    "horizon": "scalp",
-    "market_state": "Transisi",
+    "bias": "bullish",
+    "confidence": 60,
+    "horizon": "intraday",
+    "market_state": "Trending",
     "avoid_trading": false,
-    "support": "4112.73 / 4115.44 / 4098.54",
-    "resistance": "4120.64 / 4124.07 / 4124.74",
-    "invalidation": "Close M5 di atas 4120.64",
-    "invalidation_note": "Jika harga ditutup di atas 4120.64 pada grafik 5 menit, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 6.7 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
+    "support": "4109.2 / 4054.76 / 4048.58",
+    "resistance": "4122.62 / 4126.01 / 4134.23",
+    "invalidation": "Close M15 di bawah 4109.2",
+    "invalidation_note": "Jika harga ditutup di bawah 4109.2 pada grafik 15 menit, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 2.6 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
     "blackout": null,
     "plan": {
-      "status": "valid",
-      "side": "SELL",
-      "entry": 4113.9,
-      "sl": 4120.64,
-      "tp": 4107.15,
-      "r_usd": 6.74,
-      "r_atr": 0.38,
-      "sl_basis": "penutupan candle 5 menit",
-      "expires": "2026-11-09 08:30"
+      "status": "invalid",
+      "reason": "Level batal terlalu dekat dengan harga (kurang dari 0,2 ATR 1 jam). Tidak dihitung dalam statistik."
     },
-    "summary": "AI menilai harga emas cenderung turun dalam jangka pendek (sekitar 2 jam ke depan). Kondisi pasar: sedang berganti arah (transisi). Area yang diperhatikan: support (penahan harga) di 4112.73 / 4115.44 / 4098.54, resistance (penghambat harga) di 4120.64 / 4124.07 / 4124.74. Keyakinan model 55% (sedang). Ini penilaian model, bukan jaminan hasil.",
-    "reasoning": "M5 menunjukkan koreksi tajam (RSI 35.1, zscore -3.11, bb_pct -0.28) di bawah EMA20 4120.64. M15 tetap trend_up tapi candle terakhir bearish besar. H1 transition dengan ema_stack bull. Bias bearish scalp mengikuti momentum M5, invalidasi close_above EMA20 M5. Horizon scalp karena M5/M15 timing.",
-    "chart": "charts/p905_v2.png"
+    "summary": "AI menilai harga emas cenderung naik dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang bergerak searah (tren). Area yang diperhatikan: support (penahan harga) di 4109.2 / 4054.76 / 4048.58, resistance (penghambat harga) di 4122.62 / 4126.01 / 4134.23. Keyakinan model 60% (sedang). Ini penilaian model, bukan jaminan hasil.",
+    "reasoning": "H1/H4 bullish (ema_stack bull, regime trend_up/transition) mendukung bias intraday. M5 oversold (RSI 35.6, bb_pct 0.05, zscore -1.81) di atas support 4109.2 menunjukkan peluang bounce. D1 bearish tapi jauh di bawah. Invalidation: close M15 < 4109.2.",
+    "chart": "charts/p906_v2.png"
   },
   "stats": {
     "n": 44,
@@ -47,6 +40,14 @@
     "rules": "r3"
   },
   "history": [
+    {
+      "time": "2026-11-09 06:45",
+      "bias": "bullish",
+      "conf": 60,
+      "horizon": "intraday",
+      "result": "open",
+      "chart": "charts/p906_v2.png"
+    },
     {
       "time": "2026-11-09 06:30",
       "bias": "bearish",
@@ -141,7 +142,7 @@
       "conf": 65,
       "horizon": "intraday",
       "result": "open",
-      "chart": "charts/p894_v2.png"
+      "chart": null
     },
     {
       "time": "2026-11-09 03:30",
@@ -355,14 +356,6 @@
       "time": "2026-11-06 07:00",
       "bias": "bearish",
       "conf": 50,
-      "horizon": "intraday",
-      "result": "na",
-      "chart": null
-    },
-    {
-      "time": "2026-11-06 06:45",
-      "bias": "bearish",
-      "conf": 55,
       "horizon": "intraday",
       "result": "na",
       "chart": null
