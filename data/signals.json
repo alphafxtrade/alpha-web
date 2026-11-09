@@ -1,27 +1,34 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-09 06:57",
+  "updated_utc": "2026-11-09 07:12",
   "latest": {
-    "time": "2026-11-09 06:45",
-    "price": 4111.81,
-    "session": "Asia",
+    "time": "2026-11-09 07:00",
+    "price": 4107.47,
+    "session": "London",
     "bias": "bullish",
-    "confidence": 60,
+    "confidence": 50,
     "horizon": "intraday",
-    "market_state": "Trending",
+    "market_state": "Transisi",
     "avoid_trading": false,
-    "support": "4109.2 / 4054.76 / 4048.58",
-    "resistance": "4122.62 / 4126.01 / 4134.23",
-    "invalidation": "Close M15 di bawah 4109.2",
-    "invalidation_note": "Jika harga ditutup di bawah 4109.2 pada grafik 15 menit, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 2.6 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
+    "support": "4054.76 / 4048.58 / 4041.69",
+    "resistance": "4134.23 / 4146.83",
+    "invalidation": "Close H1 di bawah 4054.76",
+    "invalidation_note": "Jika harga ditutup di bawah 4054.76 pada grafik 1 jam, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 52.7 dolar dari harga saat analisa.",
     "blackout": null,
     "plan": {
-      "status": "invalid",
-      "reason": "Level batal terlalu dekat dengan harga (kurang dari 0,2 ATR 1 jam). Tidak dihitung dalam statistik."
+      "status": "valid",
+      "side": "BUY",
+      "entry": 4107.47,
+      "sl": 4054.76,
+      "tp": 4160.17,
+      "r_usd": 52.7,
+      "r_atr": 2.97,
+      "sl_basis": "penutupan candle 1 jam",
+      "expires": "2026-11-09 15:00"
     },
-    "summary": "AI menilai harga emas cenderung naik dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang bergerak searah (tren). Area yang diperhatikan: support (penahan harga) di 4109.2 / 4054.76 / 4048.58, resistance (penghambat harga) di 4122.62 / 4126.01 / 4134.23. Keyakinan model 60% (sedang). Ini penilaian model, bukan jaminan hasil.",
-    "reasoning": "H1/H4 bullish (ema_stack bull, regime trend_up/transition) mendukung bias intraday. M5 oversold (RSI 35.6, bb_pct 0.05, zscore -1.81) di atas support 4109.2 menunjukkan peluang bounce. D1 bearish tapi jauh di bawah. Invalidation: close M15 < 4109.2.",
-    "chart": "charts/p906_v2.png"
+    "summary": "AI menilai harga emas cenderung naik dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang berganti arah (transisi). Area yang diperhatikan: support (penahan harga) di 4054.76 / 4048.58 / 4041.69, resistance (penghambat harga) di 4134.23 / 4146.83. Keyakinan model 50% (sedang). Ini penilaian model, bukan jaminan hasil.",
+    "reasoning": "D1 tren bearish (ema_stack bear, regime trend_down) tapi H4 trend_up dan H1 ema_stack bullish. M15 trend_up dengan ADX 30. M5 transition oversold. Harga 4107 di atas pivot R2 4080 dan low hari ini 4054. Bias bullish intraday tapi konflik D1 menurunkan confidence. Invalidation close H1 di bawah low hari ini 4054.76. Risiko: lelang 3-Year Note 11 jam lagi, headline campuran.",
+    "chart": "charts/p907_v2.png"
   },
   "stats": {
     "n": 44,
@@ -40,6 +47,14 @@
     "rules": "r3"
   },
   "history": [
+    {
+      "time": "2026-11-09 07:00",
+      "bias": "bullish",
+      "conf": 50,
+      "horizon": "intraday",
+      "result": "open",
+      "chart": "charts/p907_v2.png"
+    },
     {
       "time": "2026-11-09 06:45",
       "bias": "bullish",
@@ -134,7 +149,7 @@
       "conf": 60,
       "horizon": "intraday",
       "result": "open",
-      "chart": "charts/p895_v2.png"
+      "chart": null
     },
     {
       "time": "2026-11-09 03:45",
@@ -348,14 +363,6 @@
       "time": "2026-11-06 07:15",
       "bias": "bearish",
       "conf": 55,
-      "horizon": "intraday",
-      "result": "na",
-      "chart": null
-    },
-    {
-      "time": "2026-11-06 07:00",
-      "bias": "bearish",
-      "conf": 50,
       "horizon": "intraday",
       "result": "na",
       "chart": null
