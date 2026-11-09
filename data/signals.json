@@ -1,37 +1,37 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-09 05:26",
+  "updated_utc": "2026-11-09 05:41",
   "latest": {
-    "time": "2026-11-09 05:15",
-    "price": 4123.32,
+    "time": "2026-11-09 05:30",
+    "price": 4124.75,
     "session": "Asia",
     "bias": "bullish",
-    "confidence": 65,
+    "confidence": 60,
     "horizon": "intraday",
     "market_state": "Trending",
     "avoid_trading": false,
-    "support": "4122.36 / 4115.31 / 4112.68",
-    "resistance": "4134.23 / 4127.05 / 4124.74",
-    "invalidation": "Close M15 di bawah 4112.68",
-    "invalidation_note": "Jika harga ditutup di bawah 4112.68 pada grafik 15 menit, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 10.6 dolar dari harga saat analisa.",
+    "support": "4120.99 / 4115.12 / 4099.47",
+    "resistance": "4134.23 / 4127.35 / 4126.01",
+    "invalidation": "Close M15 di bawah 4115.12",
+    "invalidation_note": "Jika harga ditutup di bawah 4115.12 pada grafik 15 menit, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 9.6 dolar dari harga saat analisa.",
     "blackout": null,
     "plan": {
       "status": "valid",
       "side": "BUY",
-      "entry": 4123.32,
-      "sl": 4112.68,
-      "tp": 4133.97,
-      "r_usd": 10.64,
-      "r_atr": 0.58,
+      "entry": 4124.75,
+      "sl": 4115.12,
+      "tp": 4134.38,
+      "r_usd": 9.63,
+      "r_atr": 0.52,
       "sl_basis": "penutupan candle 15 menit",
-      "expires": "2026-11-09 13:15"
+      "expires": "2026-11-09 13:30"
     },
-    "summary": "AI menilai harga emas cenderung naik dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang bergerak searah (tren). Area yang diperhatikan: support (penahan harga) di 4122.36 / 4115.31 / 4112.68, resistance (penghambat harga) di 4134.23 / 4127.05 / 4124.74. Keyakinan model 65% (sedang). Ini penilaian model, bukan jaminan hasil.",
-    "reasoning": "M15 trend_up kuat (ADX 36.1, EMA stack bull) mendukung bias bullish intraday. H1 transition tapi EMA stack bull, harga di atas EMA20. H4 trend_up tapi EMA mixed. D1 bearish tapi jauh di bawah. M5 transition tapi EMA bull. Key support EMA20 M15 4112.68. Resistance high Asia 4134.23. DXY lemah (-0.047% 1h) mendukung emas. Confidence 65 karena konflik D1 vs TF rendah.",
-    "chart": "charts/p900_v2.png"
+    "summary": "AI menilai harga emas cenderung naik dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang bergerak searah (tren). Area yang diperhatikan: support (penahan harga) di 4120.99 / 4115.12 / 4099.47, resistance (penghambat harga) di 4134.23 / 4127.35 / 4126.01. Keyakinan model 60% (sedang). Ini penilaian model, bukan jaminan hasil.",
+    "reasoning": "M15 trend_up kuat (ADX 36.4, EMA stack bull) & H1 transition bullish (EMA stack bull, BB_pct 0.97). H4 trend_up tapi EMA mixed. D1 bearish tapi jauh di bawah. Bias intraday bullish mengikuti H1/M15. Invalidation di low M15 4115.12. Confidence 60 karena konflik D1 vs timeframe rendah.",
+    "chart": "charts/p901_v2.png"
   },
   "stats": {
-    "n": 43,
+    "n": 44,
     "dir_n": 32,
     "dir_acc": 62.5,
     "dir_lo": 45.0,
@@ -47,6 +47,14 @@
     "rules": "r3"
   },
   "history": [
+    {
+      "time": "2026-11-09 05:30",
+      "bias": "bullish",
+      "conf": 60,
+      "horizon": "intraday",
+      "result": "open",
+      "chart": "charts/p901_v2.png"
+    },
     {
       "time": "2026-11-09 05:15",
       "bias": "bullish",
@@ -132,7 +140,7 @@
       "bias": "bullish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "open",
+      "result": "na",
       "chart": "charts/p890_v2.png"
     },
     {
@@ -140,8 +148,8 @@
       "bias": "bullish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "open",
-      "chart": "charts/p889_v2.png"
+      "result": "na",
+      "chart": null
     },
     {
       "time": "2026-11-09 02:25",
@@ -357,14 +365,6 @@
       "conf": 55,
       "horizon": "intraday",
       "result": "loss",
-      "chart": null
-    },
-    {
-      "time": "2026-11-06 03:15",
-      "bias": "bearish",
-      "conf": 55,
-      "horizon": "scalp",
-      "result": "win",
       "chart": null
     }
   ]
