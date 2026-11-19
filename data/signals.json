@@ -1,52 +1,53 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-09 10:58",
+  "updated_utc": "2026-11-19 07:22",
   "latest": {
-    "time": "2026-11-09 10:45",
-    "price": 4097.02,
+    "time": "2026-11-19 07:19",
+    "price": 3734.01,
     "session": "London",
-    "bias": "bullish",
-    "confidence": 55,
+    "bias": "bearish",
+    "confidence": 50,
     "horizon": "intraday",
-    "market_state": "Transisi",
+    "market_state": "Trending",
     "avoid_trading": false,
-    "support": "4091.6 / 4084.33 / 4072.76",
-    "resistance": "4100.89 / 4110.9 / 4134.23",
-    "invalidation": "Close M15 di bawah 4091.6",
-    "invalidation_note": "Jika harga ditutup di bawah 4091.6 pada grafik 15 menit, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 5.4 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
+    "support": "3693.31 / 3720.46 / 3732.08",
+    "resistance": "3740.45 / 3752.7 / 3758.64",
+    "invalidation": "Close H1 di atas 3740.45",
+    "invalidation_note": "Jika harga ditutup di atas 3740.45 pada grafik 1 jam, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 6.4 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
     "blackout": null,
     "plan": {
-      "status": "valid",
-      "side": "BUY",
-      "entry": 4097.02,
-      "sl": 4091.6,
-      "tp": 4102.45,
-      "r_usd": 5.42,
-      "r_atr": 0.31,
-      "sl_basis": "penutupan candle 15 menit",
-      "expires": "2026-11-09 18:45"
+      "status": "invalid",
+      "reason": "Level batal terlalu dekat dengan harga (kurang dari 0,2 ATR 1 jam). Tidak dihitung dalam statistik."
     },
-    "summary": "AI menilai harga emas cenderung naik dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang berganti arah (transisi). Area yang diperhatikan: support (penahan harga) di 4091.6 / 4084.33 / 4072.76, resistance (penghambat harga) di 4100.89 / 4110.9 / 4134.23. Keyakinan model 55% (sedang). Ini penilaian model, bukan jaminan hasil.",
-    "reasoning": "M15 transition bullish (EMA stack bull, close > EMA50). H1 range tapi EMA stack bull. H4 trend_up. D1 bearish tapi jauh. London session aktif. Bias bullish intraday dengan konfidensi sedang karena konflik TF jangka panjang. Invalidation close M15 di bawah 4091.6.",
-    "chart": "charts/p922_v2.png"
+    "summary": "AI menilai harga emas cenderung turun dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang bergerak searah (tren). Area yang diperhatikan: support (penahan harga) di 3693.31 / 3720.46 / 3732.08, resistance (penghambat harga) di 3740.45 / 3752.7 / 3758.64. Keyakinan model 50% (sedang). Ini penilaian model, bukan jaminan hasil.",
+    "reasoning": "H1 dan M15 menunjukkan trend_down kuat (ADX 40.8 dan 63.5) dengan RSI oversold. H4 regime trend_up tapi price jauh di bawah EMA dan zscore -4.07 ekstrem oversold, mengindikasikan koreksi dalam downtrend besar. D1 data 11 hari lalu. London session aktif, price di dekat low sesi. Bias bearish intraday dengan confidence rendah karena konflik H4. Invalidation: close H1 di atas London high 3740.45.",
+    "chart": "charts/p923_v2.png"
   },
   "stats": {
-    "n": 44,
-    "dir_n": 32,
-    "dir_acc": 62.5,
+    "n": 46,
+    "dir_n": 34,
+    "dir_acc": 61.8,
     "dir_lo": 45.0,
-    "dir_hi": 77.0,
-    "exp_r": 0.08,
-    "wins": 20,
+    "dir_hi": 76.0,
+    "exp_r": 0.11,
+    "wins": 21,
     "losses": 9,
     "baseline": {
       "label": "EMA D1",
-      "acc": 53.1,
-      "n": 32
+      "acc": 55.9,
+      "n": 34
     },
     "rules": "r3"
   },
   "history": [
+    {
+      "time": "2026-11-19 07:19",
+      "bias": "bearish",
+      "conf": 50,
+      "horizon": "intraday",
+      "result": "open",
+      "chart": "charts/p923_v2.png"
+    },
     {
       "time": "2026-11-09 10:45",
       "bias": "bullish",
@@ -124,7 +125,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "open",
+      "result": "timeout",
       "chart": "charts/p913_v2.png"
     },
     {
@@ -132,7 +133,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "open",
+      "result": "loss",
       "chart": "charts/p912_v2.png"
     },
     {
@@ -140,15 +141,15 @@
       "bias": "bullish",
       "conf": 50,
       "horizon": "scalp",
-      "result": "open",
-      "chart": "charts/p911_v2.png"
+      "result": "win",
+      "chart": null
     },
     {
       "time": "2026-11-09 07:45",
       "bias": "bearish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "open",
+      "result": "timeout",
       "chart": null
     },
     {
@@ -156,7 +157,7 @@
       "bias": "bullish",
       "conf": 50,
       "horizon": "scalp",
-      "result": "open",
+      "result": "na",
       "chart": null
     },
     {
@@ -164,7 +165,7 @@
       "bias": "bearish",
       "conf": 50,
       "horizon": "scalp",
-      "result": "open",
+      "result": "win",
       "chart": null
     },
     {
@@ -188,7 +189,7 @@
       "bias": "bearish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "open",
+      "result": "win",
       "chart": null
     },
     {
@@ -292,7 +293,7 @@
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": null
     },
     {
@@ -300,7 +301,7 @@
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": null
     },
     {
@@ -324,7 +325,7 @@
       "bias": "bullish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": null
     },
     {
@@ -357,14 +358,6 @@
       "conf": 50,
       "horizon": "intraday",
       "result": "win",
-      "chart": null
-    },
-    {
-      "time": "2026-11-06 10:00",
-      "bias": "bullish",
-      "conf": 55,
-      "horizon": "intraday",
-      "result": "loss",
       "chart": null
     }
   ]
