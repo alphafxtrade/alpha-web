@@ -1,9 +1,9 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-19 07:52",
+  "updated_utc": "2026-11-19 08:07",
   "latest": {
-    "time": "2026-11-19 07:45",
-    "price": 3732.85,
+    "time": "2026-11-19 08:00",
+    "price": 3734.89,
     "session": "London",
     "bias": "bearish",
     "confidence": 65,
@@ -11,24 +11,24 @@
     "market_state": "Trending",
     "avoid_trading": false,
     "support": "3690.25 / 3693.31 / 3719.76",
-    "resistance": "3734.48 / 3737.48 / 3746.9",
-    "invalidation": "Close H1 di atas 3746.9",
-    "invalidation_note": "Jika harga ditutup di atas 3746.9 pada grafik 1 jam, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 14.1 dolar dari harga saat analisa.",
+    "resistance": "3741.65 / 3758.64 / 3769.82",
+    "invalidation": "Close H1 di atas 3741.65",
+    "invalidation_note": "Jika harga ditutup di atas 3741.65 pada grafik 1 jam, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 6.8 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
     "blackout": null,
     "plan": {
       "status": "valid",
       "side": "SELL",
-      "entry": 3732.85,
-      "sl": 3746.9,
-      "tp": 3718.79,
-      "r_usd": 14.05,
-      "r_atr": 0.71,
+      "entry": 3734.89,
+      "sl": 3741.65,
+      "tp": 3728.12,
+      "r_usd": 6.76,
+      "r_atr": 0.35,
       "sl_basis": "penutupan candle 1 jam",
-      "expires": "2026-11-19 15:45"
+      "expires": "2026-11-19 16:00"
     },
-    "summary": "AI menilai harga emas cenderung turun dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang bergerak searah (tren). Area yang diperhatikan: support (penahan harga) di 3690.25 / 3693.31 / 3719.76, resistance (penghambat harga) di 3734.48 / 3737.48 / 3746.9. Keyakinan model 65% (sedang). Ini penilaian model, bukan jaminan hasil.",
-    "reasoning": "H1/H4/D1 trend_down kuat (ADX>34, EMA stack bear). M15 range di bawah EMA20, M5 mixed. Bias bearish intraday valid selama di bawah EMA20 H1 3746.9. Target S1 pivot 3690.25. RSI oversold H4/D1 butuh waspada bounce.",
-    "chart": "charts/p926_v2.png"
+    "summary": "AI menilai harga emas cenderung turun dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang bergerak searah (tren). Area yang diperhatikan: support (penahan harga) di 3690.25 / 3693.31 / 3719.76, resistance (penghambat harga) di 3741.65 / 3758.64 / 3769.82. Keyakinan model 65% (sedang). Ini penilaian model, bukan jaminan hasil.",
+    "reasoning": "Tren bearish dominan di H1/H4/D1 (EMA stack bear, regime trend_down). M5 ranging di atas EMA20 tapi di bawah EMA200. London session high 3741.65 jadi resistance kunci. Bias bearish intraday dengan invalidation close_above 3741.65 H1. Support S1 3690.25 dan low hari 3693.31 target berikutnya.",
+    "chart": "charts/p927_v2.png"
   },
   "stats": {
     "n": 46,
@@ -47,6 +47,14 @@
     "rules": "r3"
   },
   "history": [
+    {
+      "time": "2026-11-19 08:00",
+      "bias": "bearish",
+      "conf": 65,
+      "horizon": "intraday",
+      "result": "open",
+      "chart": "charts/p927_v2.png"
+    },
     {
       "time": "2026-11-19 07:45",
       "bias": "bearish",
@@ -141,7 +149,7 @@
       "conf": 55,
       "horizon": "intraday",
       "result": "open",
-      "chart": "charts/p915_v2.png"
+      "chart": null
     },
     {
       "time": "2026-11-09 08:45",
@@ -357,14 +365,6 @@
       "conf": 50,
       "horizon": "intraday",
       "result": "na",
-      "chart": null
-    },
-    {
-      "time": "2026-11-06 11:00",
-      "bias": "bearish",
-      "conf": 55,
-      "horizon": "intraday",
-      "result": "win",
       "chart": null
     }
   ]
