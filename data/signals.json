@@ -1,44 +1,37 @@
 {
   "demo": false,
-  "updated_utc": "2026-11-19 08:07",
+  "updated_utc": "2026-11-19 08:22",
   "latest": {
-    "time": "2026-11-19 08:00",
-    "price": 3734.89,
+    "time": "2026-11-19 08:15",
+    "price": 3740.2,
     "session": "London",
     "bias": "bearish",
-    "confidence": 65,
+    "confidence": 60,
     "horizon": "intraday",
     "market_state": "Trending",
     "avoid_trading": false,
-    "support": "3690.25 / 3693.31 / 3719.76",
-    "resistance": "3741.65 / 3758.64 / 3769.82",
-    "invalidation": "Close H1 di atas 3741.65",
-    "invalidation_note": "Jika harga ditutup di atas 3741.65 pada grafik 1 jam, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 6.8 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
+    "support": "3730.4 / 3719.76 / 3693.31",
+    "resistance": "3742.66 / 3758.64 / 3769.82",
+    "invalidation": "Close M15 di atas 3742.66",
+    "invalidation_note": "Jika harga ditutup di atas 3742.66 pada grafik 15 menit, analisa ini dianggap batal. Level ini dipakai sebagai SL pada simulasi evaluasi, dan belum tentu cocok untuk posisi Anda. Jaraknya sekitar 2.5 dolar dari harga saat analisa. Jarak ini sangat dekat, jadi analisa mudah batal.",
     "blackout": null,
     "plan": {
-      "status": "valid",
-      "side": "SELL",
-      "entry": 3734.89,
-      "sl": 3741.65,
-      "tp": 3728.12,
-      "r_usd": 6.76,
-      "r_atr": 0.35,
-      "sl_basis": "penutupan candle 1 jam",
-      "expires": "2026-11-19 16:00"
+      "status": "invalid",
+      "reason": "Level batal terlalu dekat dengan harga (kurang dari 0,2 ATR 1 jam). Tidak dihitung dalam statistik."
     },
-    "summary": "AI menilai harga emas cenderung turun dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang bergerak searah (tren). Area yang diperhatikan: support (penahan harga) di 3690.25 / 3693.31 / 3719.76, resistance (penghambat harga) di 3741.65 / 3758.64 / 3769.82. Keyakinan model 65% (sedang). Ini penilaian model, bukan jaminan hasil.",
-    "reasoning": "Tren bearish dominan di H1/H4/D1 (EMA stack bear, regime trend_down). M5 ranging di atas EMA20 tapi di bawah EMA200. London session high 3741.65 jadi resistance kunci. Bias bearish intraday dengan invalidation close_above 3741.65 H1. Support S1 3690.25 dan low hari 3693.31 target berikutnya.",
-    "chart": "charts/p927_v2.png"
+    "summary": "AI menilai harga emas cenderung turun dalam beberapa jam ke depan (sekitar 8 jam). Kondisi pasar: sedang bergerak searah (tren). Area yang diperhatikan: support (penahan harga) di 3730.4 / 3719.76 / 3693.31, resistance (penghambat harga) di 3742.66 / 3758.64 / 3769.82. Keyakinan model 60% (sedang). Ini penilaian model, bukan jaminan hasil.",
+    "reasoning": "H1/H4/D1 bearish trend kuat (ADX >33, EMA stack bear, price di bawah semua EMA). M15 range dengan EMA stack bear. M5 range tapi BB 0.93 & RSI 57.3 menunjukkan overbought jangka pendek. London session high 3742.66 jadi resistance kunci. Bias bearish intraday dengan confidence 60 karena konflik M5 vs TF tinggi. Invalidation: close M15 > 3742.66.",
+    "chart": "charts/p928_v2.png"
   },
   "stats": {
     "n": 46,
     "dir_n": 34,
-    "dir_acc": 61.8,
-    "dir_lo": 45.0,
-    "dir_hi": 76.0,
-    "exp_r": 0.11,
-    "wins": 21,
-    "losses": 9,
+    "dir_acc": 58.8,
+    "dir_lo": 42.0,
+    "dir_hi": 74.0,
+    "exp_r": 0.03,
+    "wins": 20,
+    "losses": 10,
     "baseline": {
       "label": "EMA D1",
       "acc": 55.9,
@@ -47,6 +40,14 @@
     "rules": "r3"
   },
   "history": [
+    {
+      "time": "2026-11-19 08:15",
+      "bias": "bearish",
+      "conf": 60,
+      "horizon": "intraday",
+      "result": "open",
+      "chart": "charts/p928_v2.png"
+    },
     {
       "time": "2026-11-19 08:00",
       "bias": "bearish",
@@ -92,7 +93,7 @@
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": "charts/p922_v2.png"
     },
     {
@@ -100,7 +101,7 @@
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": "charts/p921_v2.png"
     },
     {
@@ -108,7 +109,7 @@
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": "charts/p920_v2.png"
     },
     {
@@ -116,7 +117,7 @@
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": "charts/p919_v2.png"
     },
     {
@@ -124,7 +125,7 @@
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": "charts/p918_v2.png"
     },
     {
@@ -132,7 +133,7 @@
       "bias": "bearish",
       "conf": 50,
       "horizon": "scalp",
-      "result": "open",
+      "result": "loss",
       "chart": "charts/p917_v2.png"
     },
     {
@@ -140,15 +141,15 @@
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
-      "chart": "charts/p916_v2.png"
+      "result": "win",
+      "chart": null
     },
     {
       "time": "2026-11-09 09:00",
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": null
     },
     {
@@ -156,7 +157,7 @@
       "bias": "bullish",
       "conf": 55,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": null
     },
     {
@@ -212,7 +213,7 @@
       "bias": "bullish",
       "conf": 50,
       "horizon": "intraday",
-      "result": "open",
+      "result": "timeout",
       "chart": null
     },
     {
@@ -220,7 +221,7 @@
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": null
     },
     {
@@ -236,7 +237,7 @@
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "open",
+      "result": "loss",
       "chart": null
     },
     {
@@ -244,7 +245,7 @@
       "bias": "bullish",
       "conf": 65,
       "horizon": "intraday",
-      "result": "open",
+      "result": "loss",
       "chart": null
     },
     {
@@ -252,7 +253,7 @@
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": null
     },
     {
@@ -260,7 +261,7 @@
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "open",
+      "result": "loss",
       "chart": null
     },
     {
@@ -268,7 +269,7 @@
       "bias": "bullish",
       "conf": 65,
       "horizon": "intraday",
-      "result": "open",
+      "result": "loss",
       "chart": null
     },
     {
@@ -276,7 +277,7 @@
       "bias": "bullish",
       "conf": 65,
       "horizon": "intraday",
-      "result": "open",
+      "result": "loss",
       "chart": null
     },
     {
@@ -284,7 +285,7 @@
       "bias": "bullish",
       "conf": 65,
       "horizon": "intraday",
-      "result": "open",
+      "result": "loss",
       "chart": null
     },
     {
@@ -292,7 +293,7 @@
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "open",
+      "result": "loss",
       "chart": null
     },
     {
@@ -300,7 +301,7 @@
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": null
     },
     {
@@ -308,7 +309,7 @@
       "bias": "bullish",
       "conf": 60,
       "horizon": "intraday",
-      "result": "open",
+      "result": "na",
       "chart": null
     },
     {
@@ -316,7 +317,7 @@
       "bias": "bullish",
       "conf": 65,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": null
     },
     {
@@ -324,7 +325,7 @@
       "bias": "bullish",
       "conf": 65,
       "horizon": "intraday",
-      "result": "open",
+      "result": "win",
       "chart": null
     },
     {
@@ -356,14 +357,6 @@
       "bias": "bullish",
       "conf": 55,
       "horizon": "scalp",
-      "result": "na",
-      "chart": null
-    },
-    {
-      "time": "2026-11-09 02:25",
-      "bias": "bullish",
-      "conf": 50,
-      "horizon": "intraday",
       "result": "na",
       "chart": null
     }
